@@ -23,7 +23,12 @@ def preprocess_input(data):
 @app.route('/')
 def index():
     return open('index.html').read()
-
+@app.route('/Banana_Quality_Prediction.html')
+def i():
+    return open('Banana_Quality_Prediction.html').read()
+@app.route('/About.html')
+def it():
+    return open('About.html').read()
 # Route to classify banana quality
 @app.route('/classify_banana', methods=['POST'])
 def classify_banana():
@@ -47,5 +52,5 @@ def classify_banana():
     return jsonify({'prediction': prediction[0]})
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
